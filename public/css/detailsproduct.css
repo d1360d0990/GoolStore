@@ -1,0 +1,127 @@
+*{
+    font-family: 'roboto';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #EEFCFF;
+
+}
+
+.detail-product {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: x-large;
+    text-align: center;
+    margin: 2%;
+    h2 {
+        margin-bottom: 20px;
+        text-decoration: underline;
+    }
+    .description-div{
+        margin:10px;
+        display: inline-block;
+        h4{
+            text-decoration: underline;
+        }
+    }
+    img{
+        width: 250px;
+        margin: 20px 0px;
+    }
+    .botones {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin: 2%;
+    }
+    }
+    .style-div-botones {
+        display: flex;
+        margin: 5% 20%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .boton-editar {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #ebebeb;
+        background-color: #2968c8;
+        border-radius: 5px;
+        margin: 2% 5% 2% 5%;
+        padding: 10px 70px;
+        border: none;
+        font-weight: bold;
+        height: 35px;
+        cursor: pointer;
+        transition: background-color 500ms;
+    }
+    
+    .boton-editar:hover {
+        background-color: #0022AA;
+    }
+    
+    .boton-eliminar {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #ebebeb;
+        background-color: #f52536;
+        border-radius: 5px;
+        margin: 2% 5% 2% 5%;
+        padding: 10px 70px;
+        border: none;
+        font-weight: bold;
+        height: 35px;
+        cursor: pointer;
+        transition: background-color 500ms;
+    }
+    
+    .boton-eliminar:hover {
+        background-color: #9c042a;
+    }
+    .boton-cancelar {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #ebebeb;
+        background-color: #a8a8a8;
+        border-radius: 5px;
+        margin: 2% 5% 2% 5%;
+        padding: 10px 70px;
+        border: none;
+        font-weight: bold;
+        height: 35px;
+        cursor: pointer;
+        transition: background-color 500ms;
+    }
+    
+    .boton-cancelar:hover {
+        background-color: #585858;
+    }
+
+/*-------CSS de button-top.ejs-------*/
+.button-index {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+    border-radius: 50%;
+    background-color: #4878D9;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+.button-index.show {
+    display: block;
+}
+.button-index i {
+    font-size: x-large;
+    color: #000000;
+}

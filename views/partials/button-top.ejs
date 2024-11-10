@@ -1,0 +1,23 @@
+<button class="button-index"><i class="fa-solid fa-arrow-up"></i></button>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const button = document.querySelector('.button-index');
+
+      // Mostrar u ocultar el botón basado en el desplazamiento de la página
+      window.addEventListener('scroll', function() {
+          if (window.scrollY > 0) {
+              button.classList.add('show');
+          } else {
+              button.classList.remove('show');
+          }
+      });
+
+      // Desplazar la página hacia arriba al hacer clic en el botón
+      button.addEventListener('click', function() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth' // Desplazamiento suave
+          });
+      });
+  });
+</script>

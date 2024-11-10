@@ -1,0 +1,113 @@
+<html lang="es">
+<%- include('../partials/head.ejs', {estilo:'somosgooolstore'})%>
+
+    <body>
+        <%-include ('../partials/header.ejs')%>
+            <%-include ('../partials/nav-bar.ejs')%>
+                <%-include ('../partials/button-top.ejs')%>
+                    <main class="perfil-usuario">
+                        <div class="saludo">
+                            <h1 class="titulo-miperfil">SOMOS GOOOLSTORE</h1>
+                        </div>
+                        <div class="img">
+                            <img src="/images/logo_sin_fondo.png" alt="">
+                            <p class="p-text">Nuestra tienda de indumentaria deportiva online ofrece una amplia gama de productos 
+                                diseñados para todos los amantes del Futbol. Ropa especializada, accesorios de alta calidad, 
+                                colección cuidadosamente seleccionada, todo esto para brindar comodidad, rendimiento y un 
+                                estilo de vida activo.
+                                Explora nuestra selección de camisetas transpirables, pantalones cómodos, calzado de 
+                                alto rendimiento y accesorios funcionales como bolsos, canilleras y guantes. 
+                                Además, trabajamos con variedades de marcas de primer nivel en la industria 
+                                deportiva.</p>
+                        </div>
+                        <div>
+                            <h2>PUBLICO OBJETIVO</h2>
+                            <p class="p-public">Dirigido para los y las amantes del futbol. Nos enfocamos en aquellos que valoran la calidad, 
+                                la innovación y el confort, por lo que ofrecemos varias opciones, para hombres, mujeres, 
+                                niños, niñas, abuelos, etc. Nos aseguramos que todas las familias puedan encontrar lo que 
+                                necesitan para alcanzar sus metas deportivas y mantenerse activas con estilo.</p>
+                        </div>
+                        <div>
+                            <h2>INTEGRANTES DEL EQUIPO</h2>
+                            <div class="integrante">
+                                <h3><li class="li-user" onclick="toggleText('texto-lucas')">BARRERA MENEM LUCAS</li></h3>
+                                    <p id="texto-lucas" class="p-user oculto">Soy estudiante avanzado de la Tecnicatura Universitaria en Programación de la 
+                                    Universidad Tecnológica Nacional.Ya habiendo culminado la currícula de la carrera, 
+                                    sigo perfeccionando mi perfil con cursos de programación para adquirir mas 
+                                    herramientas como programador Fullstack. Mi nivel de Inglés es básico cubriendo 
+                                    lo esencial. Día a día en continua formación.En cuanto a mi experiencia laboral 
+                                    previa: mi paso por distintos rubros de trabajo han logrado que desarrolle 
+                                    habilidades de negociacion,capacidad de adaptacion, tolerancia a las criticas. 
+                                    Siempre con un enfoque de mejora continua. Mis conocimientos en programacion son 
+                                    HTML, CSS, JavaScript, React, SQL, Express, NodeJS.</p>
+                            </div>
+                            <div class="integrante">
+                                <h3><li class="li-user" onclick="toggleText('texto-diego')">DIAZ JARA DIEGO ORLANDO</li></h3>
+                                    <p id="texto-diego" class="p-user oculto">Soy estudiante de Ingenieria en Sistemas, cursando 4 año, conocimientos medio en 
+                                    lenguajes como c, c++, c#, en 2021 me recibí de diplomado en robótica, día a día 
+                                    me esfuerzo en aprender cosas nuevas relacionadas al mundo de las IT, estoy en 
+                                    constante capacitación, tambien me dedico a la parte técnica en arreglo de pc y 
+                                    cel. Con perseverancia y siendo resiliente tengo la confianza en que podremos 
+                                    afrontar estos desafios y aprender paralelamente. <br>
+                                <a href="https://github.com/d1360d0990">Enlace a git</a>
+                                </p>
+
+                            </div>
+                            <div class="integrante">   
+                                <h3><li class="li-user" onclick="toggleText('texto-marcos')">FLORES MARCOS FABIÁN</li></h3>
+                                    <p id="texto-marcos" class="p-user oculto">Soy estudiante de Licenciatura en Sistemas de Información en la Universidad Nacional 
+                                    de La Rioja. Estoy en constante aprendizaje para mejorar mis habilidades en HTML, 
+                                    CSS y JavaScript. Creo firmemente que con motivación, esfuerzo y constancia, todo 
+                                    es posible.</p>
+                            </div>
+                            <div class="integrante">
+                                <h3><li class="li-user" onclick="toggleText('texto-carlos')">QUINTERO CARLOS GASTON</li></h3>
+                                    <p id="texto-carlos" class="p-user oculto">Graduado de la carrera de Ingenieria en Sistemas en la Universidad Nacional de La 
+                                    Rioja (UNLAR), tengo 34 años y 2 hijos. Actualmente soy director del Punto Digital 
+                                    del departamento Sanagasta. Cuento con experiencia en tecnologias de bases de datos 
+                                    (SQL Server), redes e instalaciones de camaras de seguridad atraves de IP, manejo 
+                                    de Active Directory (Proxy, Dominios, Directivas), reparacion de equipos informaticos 
+                                    e instalación de SO, manejo de PowerBI, amplio conocimiento en Electricidad 
+                                    Domiciliaria e instalacion de Paneles solares. Uso Windows 10. Comprometido y 
+                                    colaborativo con todos los equipos que me toco integrar o dirigir, siempre dispuesto 
+                                    a aprender, enseñar y mejorar. Mi manejo del lenguaje ingles es moderado.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div>
+                            <h2>SITIOS DE REFERENCIAS</h2>
+                            <div>
+                                <h4><a href="https://www.solodeportes.com.ar">https://www.solodeportes.com.ar</a></h4>
+                                <h4><a href="https://www.megasports.com.ar">https://www.megasports.com.ar</a></h4>
+                                <h4><a href="https://www.sportline.com.ar ">https://www.sportline.com.ar </a></h4>
+                                <h4><a href="https://www.dexter.com.ar">https://www.dexter.com.ar</a></h4>
+                                <h4><a href="https://www.netshoes.com.br">https://www.netshoes.com.br</a></h4>
+                            </div>
+                            <br>
+                            <div>
+                                <p class="p-public">Elegimos estos sitios webs antes descriptos, porque son los que se asemejan al proyecto que vamos 
+                                a desarrollar. Estos sitios en dispositivos moviles nos dejo ciertas ideas y preferencias que pondremos 
+                                en practica, y donde podremos comenzar. Algunos de estas ideas son:</p>
+                                    <p><li class="li">Los carruseles de productos</li></p>
+                                    <p><li class="li">Los carruseles de marcas deportivas</li></p>
+                                    <p><li class="li">Logueo y Registro sencillo de algunos sitios</li></p>
+                                    <p><li class="li">Los menus desplegables</li></p>
+                                    <p><li class="li">El carrito de compras</li></p>
+                                    <p><li class="li">La pagina de favoritos</li></p>
+                                <br>
+                                <p class="p-public">Todas las paginas, a su vez, usan un fondo blanco para resaltar los productos, solo usan colores 
+                                    relativos a la marca en el header y el color negro/gris oscuro en el footer.
+                                </p>    
+                            </div>
+                        </div>
+                    </main>
+                <%-include ('../partials/footer.ejs')%>
+                <script>
+                    function toggleText(id) {
+                        const texto = document.getElementById(id);
+                        texto.classList.toggle("oculto");
+                    }
+                </script>
+    </body>
+</html>

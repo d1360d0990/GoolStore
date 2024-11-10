@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ('../partials/head.ejs', {estilo:'editproduct'})%>
+
+    <body>
+        <%-include ('../partials/header.ejs')%>
+            <%-include ('../partials/nav-bar.ejs')%>
+                <main>
+                    <%-include ('../partials/button-top.ejs')%>
+                        <section class="cargaproducto">
+                            <h2>Editar Producto</h2>
+                            <form action="/products/detail/<%= producto.id %>?_method=put" method="POST"
+                                enctype="multipart/form-data" class="formulario" id="formulario">
+                                <div>
+                                    <label for="nombre">Nombre del Producto:</label>
+                                    <input type="text" name="nombre" id="producto" placeholder="* Nombre del Producto"
+                                        value="<%= producto.nombre%>" />
+
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.nombre) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.nombre.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <div>
+                                    <label for="precio">Precio: </label>
+                                    <input type="text" name="precio" id="precio" value="<%= producto.precio %>">
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.precio) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.precio.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <label>
+                                    En oferta: <input type="checkbox" name="oferta" <%=producto.oferta ? 'checked' : ''
+                                        %>>
+                                </label>
+                                <label>
+                                    Porcentaje de descuento:
+                                    <input type="number" name="descuento" min="0" max="100"
+                                        value="<%= producto.descuento %>">
+                                </label>
+                                <div>
+                                    <label for="color">Color: </label>
+                                    <input type="text" name="color" id="color" value="<%= producto.color %>">
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.color) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.color.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <div>
+                                    <label for="marca">Marca: </label>
+                                    <select name="marca" id="marca">
+                                        <% for( let i=0; i < marcas.length; i++ ) { %>
+                                            <option value="<%= marcas[i].id %>" <% if (marcas[i].id===producto.id_marca)
+                                                { %> selected <% } %> >
+                                                    <%= marcas[i].descripcion %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.marca) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.marca.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <div>
+                                    <label for="talle">Talle: </label>
+                                    <select name="talle" id="talle">
+                                        <% for( let i=0; i < talles.length; i++ ) { %>
+                                            <option value="<%= talles[i].id %>" <% if (talles[i].id===producto.id_talle)
+                                                { %> selected <% } %> >
+                                                    <%= talles[i].descripcion %>
+                                            </option>
+
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.talle) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.talle.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+
+                                <div class="input">
+                                    <div>
+                                        <label for="categoria">Categoria:</label>
+                                        <select name="categoria" id="categoria">
+                                            <option value="">Selecciona una categoría</option>
+                                            <% categoriasPrincipales.forEach(categoria=> { %>
+                                                <option value="<%= categoria.id %>">
+                                                    <%= categoria.categoria %>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                        <div id="subcategoriaDiv" style="display: none;">
+                                            <label for="subcategoria">Subcategoria:</label>
+                                            <select name="subcategoria" id="subcategoria">
+                                                <option value="">Selecciona una subcategoría</option>
+                                                <% categoriasPrincipales.forEach(categoria=> { %>
+                                                    <% if (categoria.subcategoria && categoria.subcategoria.length> 0) {
+                                                        %>
+                                                        <% categoria.subcategoria.forEach(subcategoria=> { %>
+                                                            <option data-categoria="<%= categoria.id %>"
+                                                                value="<%= subcategoria.id %>" <% if
+                                                                (subcategoria.id===subcategoriaEditado.id) { %> selected
+                                                                <% } %>
+                                                                    >
+                                                                    <%= subcategoria.categoria %>
+                                                            </option>
+                                                            <% }) %>
+                                                                <% } %>
+                                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                        <div id="tipoProductoDiv" style="display: none;">
+                                            <label for="tipoProducto">Tipo:</label>
+                                            <select name="tipoProducto" id="tipoProducto">
+                                                <option value="">Selecciona un tipo</option>
+                                                <% categoriasPrincipales.forEach(categoria=> { %>
+                                                    <% if (categoria.subcategoria && categoria.subcategoria.length> 0) {
+                                                        %>
+                                                        <% categoria.subcategoria.forEach(subcategoria=> { %>
+                                                            <% if (subcategoria.tiposProducto &&
+                                                                subcategoria.tiposProducto.length> 0) { %>
+                                                                <% subcategoria.tiposProducto.forEach(tipo=> { %>
+                                                                    <option data-subcategoria="<%= subcategoria.id %>"
+                                                                        value="<%= tipo.id %>" <% if
+                                                                        (tipo.id===productoEditado.id) { %> selected <%
+                                                                            } %>>
+                                                                            <%= tipo.categoria %>
+                                                                    </option>
+                                                                    <% }) %>
+                                                                        <% } %>
+                                                                            <% }) %>
+                                                                                <% } %>
+                                                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="descripcion">Descripción del Producto:</label>
+                                    <textarea type="text" name="descripcion"
+                                        id="descripcion"><%= producto.descripcion%></textarea>
+                                    <br>
+                                </div>
+
+                                <span id="charCounter">Faltan 20 caracteres para el mínimo requerido (20).</span>
+                                <div class="error-container">
+                                    <% if (mapsDeError.descripcion) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.descripcion.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <div class="imagen">
+                                    <label for="imagen">Cambiar imagen del producto:</label>
+                                    <div class="image-preview" id="imagePreview">
+                                        <img src="/images/products/<%= producto.imagen %>" id="imgPreview" src=""
+                                            alt="Vista previa de la imagen" />
+                                    </div>
+                                    <br>
+                                    <% if (mapsDeError.descripcion) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.descripcion.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+
+                                <div>
+                                    <input type="file" name="imagen" id="imagen" value="<%=producto.imagen%>" />
+                                    <input type="hidden" name="currentImage" value="<%= producto.imagen %>">
+                                </div><br>
+                                <div class="botones">
+                                    <button class="boton-confirmar" type="submit" name="enviar"
+                                        id="enviar">Confirmar</button>
+                                    <button class="boton-cancelar" type="reset" class="boton-reset"
+                                        onclick="location.href='/products';">Cancelar</button>
+                                </div>
+                            </form>
+                        </section>
+                </main>
+                <script src="/js/product.js"></script>
+                <script src="/js/mostrarimagen.js"></script>
+                <% if (errorMessage && errorMessage.length> 0) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Error',
+                            text: '<%= errorMessage %>',
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    </script>
+                    <% } %>
+                        <% if (successMessage && successMessage.length> 0) { %>
+                            <script>
+                                Swal.fire({
+                                    title: 'Producto editado',
+                                    text: '<%= successMessage %>',
+                                    icon: 'success',
+                                    confirmButtonText: 'Aceptar'
+                                });
+                            </script>
+                            <% } %>
+                                <%-include ('../partials/footer.ejs')%>
+                                    <% if (successMessage && successMessage.length> 0) { %>
+                                        <script>
+                                            Swal.fire({
+                                                title: 'Producto editado',
+                                                text: '<%= successMessage %>',
+                                                icon: 'success',
+                                                confirmButtonText: 'Aceptar'
+                                            });
+                                        </script>
+                                        <% } %>
+    </body>
+
+</html>

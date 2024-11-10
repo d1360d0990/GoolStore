@@ -1,0 +1,320 @@
+paleta {
+    color: #4970E3 rgb (73, 112, 227);
+    color: #E0F5F6 rgb (224, 245, 246);
+    color: #E5E5E5 rgb (229, 229, 229);
+    color: #00B5B9 rgb (0, 181, 185);
+    color: #004557 rgb (0, 69, 87);
+    color: #00131F rgb (0, 19, 31);
+}
+
+/*------------------- HTML -----------------*/
+* {
+    font-family: 'roboto';
+}
+
+/*------------------- BODY -----------------*/
+body {
+    background-color: #EEFCFF;
+    margin: 0;
+    width: 100%;
+}
+
+
+.errorValidator {
+    color: rgba(248, 42, 87, 0.726);
+}
+
+.cuadros-login.error-border {
+    border: 2px solid rgba(248, 42, 87, 0.726);
+    /* Cambia el color del borde a rojo y aumenta el grosor */
+    /* background-color: #ffffff;  */
+    /* box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);  */
+    border-radius: 4px;
+    /* Mantiene los bordes redondeados */
+}
+
+.input-container {
+    flex: 1;
+    /* Asegura que cada contenedor ocupe el mismo espacio */
+    margin-right: 10px;
+    /* Espacio entre los campos */
+}
+
+.input-container:last-child {
+    margin-right: 0;
+    /* Elimina el margen en el último campo de la fila */
+}
+
+.error-container {
+    display: flex;
+    justify-content: space-between;
+    /* Espacia los elementos a lo largo de la línea */
+    margin-bottom: 10px;
+    /* Asegura que el contenedor de errores se muestre como bloque */
+    margin-right: 0;
+    /* gap: 9rem; */
+}
+
+.errorValidator.izquierda {
+    /* margin: 0 2% 1% 0; */
+    text-align: start;
+    /* padding-left: 2%; */
+    width: 50%;
+    text-align: center;
+
+}
+
+.errorValidator.derecha {
+    /* margin: 0 2% 1% 0; */
+    text-align: start;
+    /* padding-right: 2%; */
+    width: 50%;
+    text-align: center;
+
+}
+
+/*----------------- HEADER -----------------
+ .first-box { 
+     width : 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+ .burger-menu {
+     display: flex;
+     align-items: center;
+     color :#000000;
+     background-color: #ffffff;
+     width: 22px;
+     height: 22px;
+     padding: 7px;
+     border-radius: 6px;
+     font-size: 22px;
+     position: absolute;
+     left: 20px;
+ }
+ .burger-menu i{
+     padding-left: 2px;
+     font-weight: 900;
+ }
+ .imagen-box {
+     position: relative;
+     padding: 0 0 0 40%;
+ }
+ .imagen-box img { 
+     height: 50px;
+ }
+ .box-icons {
+     display: flex;
+     align-items: center;
+     position: absolute;
+     right: 20px;
+ }
+ .box-icons > i {
+     margin-left: 15px;
+     font-size: 20px;
+     font-weight: 900;
+     cursor: pointer;
+     color: #ffffff;
+ }
+ .box-icons > i:hover{
+     color: #000000;
+ }*/
+
+/*------------------ MAIN ------------------*/
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.form {
+    margin-right: 2%;
+}
+
+.style-div {
+    margin: inherit;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.h3 {
+    color: #00B5B9;
+    border-bottom: 2px solid #00B5B9;
+    padding-bottom: 5px;
+    margin-bottom: 1%;
+}
+
+.div-par {
+    display: flex;
+    /* align-content: space-between; */
+    gap: 1em;
+    align-items: center;
+
+    justify-content: center;
+}
+
+.container-class {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* align-content: center; */
+    /* margin-left: 0; */
+    /* margin-right: 0; */
+    justify-content: center;
+}
+
+.perfil-usuario {
+    margin: 1rem;
+
+}
+
+.perfil-usuario h1 {
+    margin-left: 0.5rem;
+}
+
+.saludo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulo-miperfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+.foto-perfil {
+    /* margin: 1rem; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* Hace la imagen redonda */
+    object-fit: cover;
+    /* Asegura que la imagen se recorte bien si no es cuadrada */
+}
+.foto-perfil-cuadrada {
+    max-height: 120px;
+    object-fit: cover;
+    margin-left: 20px;
+
+}
+
+.container-datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px 30px;
+}
+
+.todos-datos {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.datos {
+    background-color: white;
+    padding: 1rem;
+    border-color: gray;
+    border-style: solid;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 320px;
+}
+
+.datos h4 {
+    padding: 0.2rem;
+}
+
+.dato {
+    display: flex;
+    text-align: right;
+    margin: 10 0 10 0;
+    font-size: larger;
+}
+
+.atributo {
+    color: black;
+    text-decoration: underline;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.valor {
+    color: rgb(75, 72, 72);
+}
+
+.boton-editar {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #2968c8;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 40px;
+    border: none;
+    font-weight: bold;
+    height: 35px;
+    cursor: pointer;
+    transition: background-color 500ms;
+    font-size: larger;
+}
+
+.boton-editar:hover {
+    background-color: #0056b3;
+}
+
+.button-index {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+    border-radius: 50%;
+    background-color: #4878D9;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.button-index.show {
+    display: block;
+}
+
+.button-index i {
+    font-size: x-large;
+    color: #000000;
+}
+
+
+
+/*------------------ MEDIA QUERYS ------------------*/
+
+@media (min-width : 769px) {
+    .imagen-box {
+        position: relative;
+        padding: 0 0 0 25%;
+    }
+
+    .style-label-user {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        justify-content: space-evenly;
+    }
+}

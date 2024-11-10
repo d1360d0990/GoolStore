@@ -1,0 +1,374 @@
+* {
+    font-family: 'roboto';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #EEFCFF;
+
+}
+
+
+.navegador{
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* background-color: #EEFCFF; */
+  height: 50px;
+  /* width: 100%; */
+  /* color: rgb(218, 211, 211); */
+  font-size: 12px;
+  font-weight: bold;
+  /* text-shadow: 2px 2px 4px #7a7979; */
+  gap: 10px;
+  a, a:visited, a:hover, a:active {
+      color: rgb(14, 53, 85);
+      /* text-decoration: ; */
+    }
+    .signo{
+      /* display: inline; */
+      /* width: 100%; */
+      /* height: 250px; */
+      /* background-image: url(../img/banner.jpg); */
+      /* background-size: cover; */
+      /* background-position: center; */
+      /* display: flex; */
+      /* flex-direction: row; */
+      /* justify-content: center; */
+      /* align-items: center; */
+      color: rgb(14, 53, 85);
+      font-size: 12px;
+      font-weight: bold;
+      /* text-shadow: 2px 2px 4px #000000; */
+    }
+    .tipo{
+      font-size: 12px;
+      font-weight: bold;
+      color: rgb(14, 53, 85);
+      
+    }
+}
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;            /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+    min-height: 80vh;          /*Ocupa toda la altura de la pantalla  */
+    max-width: 1200px;          /* Limita el ancho en pantallas grandes */
+    margin: 0 auto;  
+    margin-top: 50px;
+    margin-bottom: 50px;           /* Centramos el contenedor */
+  }
+  
+  /* Imagen del producto */
+  .product-image {
+    flex: 1 1 66%;              /* Ocupa el 50% del ancho disponible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+  }
+  
+  .product-image img {
+    width: 90%;                 /* Tamaño adaptativo para la imagen */
+    max-height: 80vh;           /* Limita la altura para evitar que desborde */
+    object-fit: cover;          /* Ajusta la imagen sin distorsión */
+    border-radius: 10px;
+  }
+  
+  /* Información del producto */
+  .product-info {
+    flex: 1 1 34%;              /* Ocupa el otro 50% del ancho disponible */
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    justify-content: flex-start;
+    /* padding: 40px; */
+    background-color: #ffffff;
+    padding-left: 40px;
+    padding-top: 70px;
+  }
+  
+  .product-info .brand {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .product-info .product-name {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .product-info .price {
+    font-size: 1.8em;
+    color: #1a73e8;
+    margin: 20px 0;
+  }
+  
+  .product-info .color {
+    font-size: 1.1em;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .product-info .description {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 20px;
+    max-width: 600px;
+  }
+  
+  /* Estilo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .product-detail {
+      flex-direction: column;
+    }
+    
+    .product-image,
+    .product-info {
+      flex: 1 1 100%;             /* Ocupa todo el ancho en pantallas pequeñas */
+      padding: 20px;
+    }
+  
+    .product-info .product-name {
+      font-size: 2em;
+    }
+  
+    .product-info .price {
+      font-size: 1.5em;
+    }
+  }
+/* Contenedor para los botones */
+.button-container {
+    display: flex;
+
+    gap: 20px;            /* Espacio entre los botones */
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  
+  /* Botón Comprar */
+  .buy-button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #1a73e8; /* Azul intenso */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-left: 0;
+  }
+  
+  .buy-button:hover {
+    background-color: #185abc; /* Azul más oscuro */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más profunda al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }
+  
+  .buy-button:active {
+    background-color: #174ea6; /* Azul más oscuro al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reducida */
+  }
+  
+  /* Botón Agregar a Favoritos */
+  .favorite-button {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    color: #1a73e8;        /* Azul para el texto */
+    background-color: #fff;
+    border: 2px solid #1a73e8; /* Borde azul */
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .favorite-button:hover {
+    background-color: #f0f7ff;  /* Fondo azul muy claro */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más profunda al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }
+  
+  .favorite-button:active {
+    background-color: #e0efff; /* Fondo más oscuro al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reducida */
+  }
+  
+.detail-product {
+    background-color: white;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: x-large;
+    text-align: center;
+    margin: 2% 10% 2% 10%;
+    padding: auto;
+
+    h2 {
+        margin-bottom: 20px;
+        text-decoration: underline;
+    }
+
+    .description-div {
+        margin: 10px;
+        display: inline-block;
+
+        h4 {
+            text-decoration: underline;
+        }
+    }
+
+    .imagen {
+        width: 50%;
+        margin: 15px;
+    }
+
+    .detalle {
+        border-style: solid;
+        /* Borde guionado */
+        border-width: 2px;
+        /* Grosor del borde */
+        border-color: rgba(0, 0, 0, 0.2);
+        margin: 15px;
+        padding: auto;
+    }
+
+    img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin: 2%;
+    }
+}
+
+.style-div-botones {
+    display: flex;
+    margin: 5% 20%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* .boton-editar {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #ebebeb;
+    background-color: #2968c8;
+    border-radius: 5px;
+    margin: 2% 5% 2% 5%;
+    padding: 10px 70px;
+    border: none;
+    font-weight: bold;
+    height: 35px;
+    cursor: pointer;
+    transition: background-color 500ms;
+} */
+.boton-editar {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #ebebeb;
+    background-color: #2968c8;
+    border-radius: 5px;
+    margin: 2% 5% 2% 5%; /* Ajuste para reducir el margen y evitar separación excesiva */
+    padding: 10px 20px; /* Reducción de padding horizontal */
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 500ms;
+    /* Eliminar height para permitir ajuste automático */
+}
+
+.normal{
+    text-decoration: line-through;
+    margin-bottom: 0.50rem;
+}
+.precio-final{
+   
+    font-size: 1.25em;
+}
+.descuento{
+    color: green;
+    font-size: 0.75em;
+    margin-left: 0.75rem;
+}
+.boton-editar:hover {
+    background-color: #0022AA;
+}
+
+.boton-eliminar {
+    /* display: inline-block; */
+    text-align: center;
+    text-decoration: none;
+    color: #ebebeb;
+    background-color: #f52536;
+    border-radius: 5px;
+    margin: 2% 5% 2% 5%;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    height: 35px;
+    cursor: pointer;
+    transition: background-color 500ms;
+}
+
+.boton-eliminar:hover {
+    background-color: #9c042a;
+}
+
+.boton-cancelar {
+    /* display: inline-block; */
+    text-align: center;
+    text-decoration: none;
+    color: #ebebeb;
+    background-color: #a8a8a8;
+    border-radius: 5px;
+    margin: 2% 5% 2% 5%;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    height: 35px;
+    cursor: pointer;
+    transition: background-color 500ms;
+}
+
+.boton-cancelar:hover {
+    background-color: #585858;
+}
+
+/*-------CSS de button-top.ejs-------*/
+.button-index {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+    border-radius: 50%;
+    background-color: #4878D9;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.button-index.show {
+    display: block;
+}
+
+.button-index i {
+    font-size: x-large;
+    color: #000000;
+}

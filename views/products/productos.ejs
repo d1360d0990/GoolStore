@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('../partials/head', {estilo: 'todoslosproductos' }) %>
+
+  <body>
+    <!-- Header -->
+    <%- include('../partials/header') %>
+      <!-- /nav-bar -->
+      <%- include('../partials/nav-bar') %>
+        <%-include ('../partials/button-top')%>
+          <!-- todos los productos -->
+          <div class="div-body">
+            <div class="nuestrosp">
+              <h2 class="products-title">Nuestros Productos</h2>
+            </div>
+            <div class="todos-los-productos">
+              <section>
+                <% productos.forEach(product=>{%>
+                  <a class="card-ejs" href="/products/detail/<%= product.id %>">
+                    <figure class="">
+                      <img src="/images/products/<%= product.imagen  %>" alt="imagen de producto" />
+                    </figure>
+                    <article class="product-ejs">
+                      <h2>
+                        <%= product.nombre %>
+                      </h2><br>
+                      <% if (product.oferta) { %>
+                        <p class="normal">$ <%= product.precio %></p>
+                        <p class="precio-final"> $ <%= (product.precio * (1 - product.descuento / 100)).toFixed(2) %> <span class="descuento"> <%= product.descuento %>%  OFF <span></span></p>
+                    <% } else { %>
+                        <p>$ <%= product.precio %></p>
+                    <% } %> 
+                      <!-- <h3>$ <%= product.precio %> -->
+                      </h3><br>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </a>
+                  <%})%>
+              </section><br>
+            </div>
+          </div>
+          <%- include('../partials/footer') %>
+            <% if (successMessage && successMessage.length> 0) { %>
+              <script>
+                Swal.fire({
+                  title: 'Producto eliminado',
+                  text: '<%= successMessage %>',
+                  icon: 'success',
+                  confirmButtonText: 'Aceptar'
+                });
+              </script>
+
+              <% } %>
+  </body>
+
+</html>

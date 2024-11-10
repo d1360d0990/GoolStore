@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include ('../partials/head.ejs', {estilo:'detailsproduct'})%>
+
+    <body>
+        <%-include ('../partials/header')%>
+            <%-include ('../partials/nav-bar')%>
+                <main>
+                    <%-include ('../partials/button-top')%>
+                        <nav class="detail-product">
+                            <h2>Detalle del producto</h2>
+                            <nav>
+                                <h3>
+                                    <%= producto.nombre %>
+                                </h3>
+                                <section>
+                                    <img src="/images/products/<%= producto.imagen%>" alt="" width="250px">
+                                </section>
+                            </nav>
+                            <nav>
+                                <section>
+                                    <div>
+                                        <div class="description-div">
+                                            <h4>Descripción:</h4>
+                                            <%= producto.descripcion %>
+                                        </div>
+                                    </div>
+                                    <div class="description-div">
+                                        <h4>Marca: </h4>
+                                        <%= producto.marca.descripcion %>
+                                    </div>
+                                    <div class="description-div">
+                                        <h4>Talla: </h4>
+                                        <%= producto.talle.descripcion %>
+                                    </div>
+                                    <div class="description-div">
+                                        <h4>Color: </h4>
+                                        <%= producto.color %>
+                                    </div>
+                                    <div class="description-div">
+                                        <h4>Precio: </h4>$<%=producto.precio%>
+                                    </div>
+                                    <% if (usuario.tipo_usuario) { %>
+                                        <div class="style-div-botones">
+                                            <a href="/products/editproduct/<%= producto.id %>">
+                                                <button class="boton-editar">
+                                                    Editar
+                                                </button>
+                                            </a>
+                                            <a href="/products/showDelete/<%= producto.id %>">
+                                                <button class="boton-eliminar">
+                                                    Eliminar
+                                                </button>
+                                            </a>
+                                            <a href="/products">
+                                                <button class="boton-cancelar" type="button">
+                                                    Cancelar
+                                                </button>
+                                            </a>
+                                        </div>
+                                        <%}%>
+
+
+                                </section>
+                            </nav>
+                        </nav>
+                </main>
+                <%-include ('../partials/footer')%>
+                <% if (successMessage && successMessage.length > 0) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Producto editado',
+                            text: '<%= successMessage %>',
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        });
+                        </script>
+                    
+                    <% } %>
+            </body>
+
+</html>

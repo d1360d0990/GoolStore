@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('../partials/head', {estilo: 'todoslosproductos' }) %>
+
+  <body>
+    <!-- Header -->
+    <%- include('../partials/header') %>
+      <!-- /nav-bar -->
+      <%- include('../partials/nav-bar') %>
+        <%-include ('../partials/button-top')%>
+          <!-- todos los productos -->
+           <% if (  bannerCategoriaPrincipal.categoria ==='Accesorios' ) { %>
+          <img class="banner" src="/images/banners/banneraccesorios.jpg" alt="">
+           <% } %>
+           <% if (  bannerCategoriaPrincipal.categoria ==='Hombre') { %>
+          <img class="banner" src="/images/banners/bannerHombre.jpg" alt="">
+           <% } %>
+           <% if (  bannerCategoriaPrincipal.categoria ==='Mujer') { %>
+          <img class="banner" src="/images/banners/bannerMujer.jpg" alt="">
+           <% } %>
+           <% if (  bannerCategoriaPrincipal.categoria ==='Infantil') { %>
+          <img class="banner" src="/images/banners/bannerInfantil.jpg" alt="">
+           <% } %>
+
+           <div class="navegador">
+            <a href="/">Inicio</a>
+            <% if (bannerCategoriaPrincipal) { %>
+              <p class="signo">></p>
+              <a href="/products/categorias?categoriaId=<%= bannerCategoriaPrincipal.id %>">
+                <%= bannerCategoriaPrincipal.categoria %>
+              </a>
+            <% } %>
+          
+            <% if (bannerSubcategoria) { %>
+              <p class="signo">></p>
+              <a href="/products/categorias?categoriaId=<%= bannerSubcategoria.id %>">
+                <%= bannerSubcategoria.categoria %>
+              </a>
+            <% } %>
+          
+            <% if (bannerTipoProducto) { %>
+              <p class="signo">></p>
+         <p class="tipo"><%= bannerTipoProducto.categoria %></p>
+            <% } %>
+          </div>
+          
+            <div class="div-body">
+           
+            <div class="todos-los-productos">
+              <section>
+                <% productos.forEach(product=>{%>
+                  <a class="card-ejs" href="/products/detail/<%= product.id %>">
+                    <figure class="">
+                      <img src="/images/products/<%= product.imagen  %>" alt="imagen de producto" />
+                    </figure>
+                    <article class="product-ejs">
+                      <h2>
+                        <%= product.nombre %>
+                      </h2><br>
+                      <h3>$ <%= product.precio %>
+                      </h3><br>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </a>
+                  <%})%>
+              </section><br>
+            </div>
+          </div>
+          <%- include('../partials/footer') %>
+       
+   
+  </body>
+
+</html>

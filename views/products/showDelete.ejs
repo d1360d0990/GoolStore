@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include ('../partials/head.ejs', {estilo:'detailsproduct'})%>
+
+    <body>
+        <%-include ('../partials/header')%>
+            <%-include ('../partials/nav-bar')%>
+                <main>
+                    <%-include ('../partials/button-top')%>
+                        <nav class="detail-product">
+                            <h2>Seguro desea eliminar este Producto?</h2>
+                            <nav>
+                                <h3>
+                                    <%= producto.nombre %>
+                                </h3>
+                                <section>
+                                    <img src="/images/products/<%= producto.imagen%>" alt="" width="250px">
+                                </section>
+                            </nav>
+                            <nav>
+                                <section>
+                                    <% if (usuario) { %>
+                                        <div class="style-div-botones">
+                                            <form method="POST"
+                                                action="/products/deleteProduct/<%= producto.id %>?_method=DELETE"
+                                                style="display:inline">
+                                                <button class="boton-eliminar" type="submit">Eliminar</button>
+                                            </form>
+
+                                            <a href="/products/detail/<%= producto.id %>">
+                                                <button class="boton-cancelar">
+                                                    Cancelar
+                                                </button>
+                                            </a>
+                                        </div>
+                                    <%}%>
+                                </section>
+                            </nav>
+                        </nav>
+                </main>
+                <% if (successMessage && successMessage.length > 0) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Perfil editado',
+                            text: '<%= successMessage %>',
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        });
+                        </script>
+                    
+                    <% } %>
+                <%-include ('../partials/footer')%>
+    </body>
+
+</html>

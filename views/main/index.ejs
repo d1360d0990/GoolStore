@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include ('../partials/head.ejs', {estilo:'index'})%>
+<%-include ('../partials/head.ejs', {estilo:'todoslosproductos'})%>
+
+  <body>
+     <!-- Header -->
+    <%- include('../partials/header') %>
+      <!-- /nav-bar -->
+      <%- include('../partials/nav-bar') %>
+        <%-include ('../partials/button-top')%>
+<!-- ------------------------------------------------------------------------------------->
+<div class="carrusel">
+  <div class="carrusel-inner">
+      <div class="item active">
+          <img src="../images/1.webp" alt="Imagen 1">
+      </div>
+      <div class="item">
+          <img src="../images/2.webp" alt="Imagen 2">
+      </div>
+      <div class="item">
+          <img src="../images/3.webp" alt="Imagen 3">
+      </div>
+      <div class="item">
+        <img src="../images/4.webp" alt="Imagen 4">
+    </div>
+    <div class="item">
+      <img src="../images/5.webp" alt="Imagen 5">
+  </div>
+  </div>
+  <button class="prev" onclick="cambiarSlide(-1)">&#10094;</button>
+  <button class="next" onclick="cambiarSlide(1)">&#10095;</button>
+</div>
+<div class="aleatorios">
+
+  <div class="todos-los-productos">
+    <section class="productos-home">
+      <% randomProducts.forEach(product=>{%>
+        <a class="card-ejs" href="/products/detail/<%= product.id %>">
+          <figure class="">
+            <img src="/images/products/<%= product.imagen  %>" alt="imagen de producto" />
+          </figure>
+          <article class="product-ejs">
+            <h2>
+              <%= product.nombre %>
+            </h2><br>
+            <% if (product.oferta) { %>
+              <p class="normal">$ <%= product.precio %></p>
+              <p class="precio-final"> $ <%= (product.precio * (1 - product.descuento / 100)).toFixed(2) %> <span class="descuento"> <%= product.descuento %>%  OFF <span></span></p>
+          <% } else { %>
+              <p>$ <%= product.precio %></p>
+          <% } %> 
+            <!-- <h3>$ <%= product.precio %> -->
+            </h3><br>
+            <i class="fas fa-truck"></i>
+          </article>
+        </a>
+        <%})%>
+    </section><br>
+  </div>
+</div>
+<!--------------------------------------------------------------------------------------->
+
+
+  <div class="boca-river" >
+    <img class="card-bocaRiver" src="images/PXBRAS3RQRD5TNDNTN3UV4E64U.jpg" alt="categoria hombres" />
+    <img class="card-bocaRiver" src="images/648ec8aee4954cf71ea440b4_boca-rp-Landscape.jpg" alt="categoria hombres" />
+  </div>
+
+ <div class="boca-river">
+    <img class="card-bocaRiver" src="images/22288-adidascamisetaalternativa2022river.jpg" alt="categoria hombres" />
+    <img class="card-bocaRiver" src="images/qJl01ux8r_1256x620__1.jpg" alt="categoria hombres" />
+  </div>
+
+
+
+<!-- ---------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+      <section class="destacado">
+          <a href="/products/details-product"><img src="../images/destacado.jpg" width="100%"></a>
+      </section>
+                  
+                  
+                  <section>
+                    <h2 class="most-searched">CATEGORIAS</h2>
+                    <div class="categorias">
+                     <div class="image-top-left"><a href="/products/categorias?categoriaId=1"><img class="card-hombre" src="images/FLYERHOMBRE.jpg" alt="categoria hombres" /></a></div>
+                     <div class="image-top-rigth"><a href="/products/categorias?categoriaId=2"><img class="card-mujer" src="images/flyermujer.jpg" alt="categoria hombres" /></a></div><hr>
+                     </div>
+                     
+                     <div class="categorias" id="ofertas">
+                      <a href="/products/ofertas"><img class="card-ofertas" src="/images/unnamed.png" alt=""> </a>
+                    </div>
+                     
+                     <div class="categorias">
+                     <div class="image-bottom-left"><a href="/products/categorias?categoriaId=3"><img class="card-niños" src="images/flyerniños.jpg" alt="categoria hombres" /></a></div>
+                     <div class="image-bottom-rigth"><a href="/products/categorias?categoriaId=4"><img class="card-accesorios" src="images/FLYERACC.jpg" alt="categoria hombres" /></a></div>
+                    </div>
+                  </section>
+                  <!-- <section class="promociones">
+                    <h2>Promociones</h2> 
+
+                  </section> -->
+        </main>
+        <%-include ('../partials/footer.ejs')%>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+          <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+          <script src="/js/carrusel.js"></script>
+          <script src="/js/productDestacados.js"></script>
+    
+  </body>
+  <%# Desplazamiento suave del boton %>
+
+</html>

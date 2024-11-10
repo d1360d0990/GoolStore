@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "firstName": "Cary",
+    "lastName": "Janson",
+    "email": "cjanson0@jigsy.com",
+    "password": "uMM8}m_|\\asB9",
+    "type": "Customer",
+    "image": "photo123.jpg"
+  },
+  {
+    "id": 2,
+    "firstName": "Augustine",
+    "lastName": "Marvel",
+    "email": "amarvel1@yellowpages.com",
+    "password": "aHB4|=|)qb@&8",
+    "type": "Customer",
+    "image": "snapshot789.jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Chuck",
+    "lastName": "Dockree",
+    "email": "cdockree2@rakuten.co.jp",
+    "password": "dTW0'4*0loV?.Hc",
+    "type": "Customer",
+    "image": "photo777.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Petronella",
+    "lastName": "Duerdin",
+    "email": "pduerdin3@army.mil",
+    "password": "rYA3*0.<7_",
+    "type": "Admin",
+    "image": "pic567.jpg"
+  },
+  {
+    "id": 5,
+    "firstName": "Christy",
+    "lastName": "Loughhead",
+    "email": "cloughhead4@mac.com",
+    "password": "jSZ9#fD*AqUQi>",
+    "type": "Customer",
+    "image": "img321.jpg"
+  },
+  {
+    "id": 6,
+    "firstName": "Gui",
+    "lastName": "Drinkwater",
+    "email": "gdrinkwater5@fda.gov",
+    "password": "jGN8_uaZuc\"N",
+    "type": "Admin",
+    "image": "file999.jpg"
+  },
+  {
+    "id": 7,
+    "firstName": "Eleonore",
+    "lastName": "Farmloe",
+    "email": "efarmloe6@cargocollective.com",
+    "password": "uFV9=J)E_U@yuuc$",
+    "type": "Customer",
+    "image": "pic567.jpg"
+  },
+  {
+    "id": 8,
+    "firstName": "Francyne",
+    "lastName": "Milliken",
+    "email": "fmilliken7@businessweek.com",
+    "password": "jYO0%D`KG+t*7X",
+    "type": "Customer",
+    "image": "snapshot789.jpg"
+  },
+  {
+    "id": 9,
+    "firstName": "Octavia",
+    "lastName": "Collacombe",
+    "email": "ocollacombe8@epa.gov",
+    "password": "wOO0\\R(0|Yz",
+    "type": "Customer",
+    "image": "picture456.jpg"
+  },
+  {
+    "id": 10,
+    "firstName": "Lyle",
+    "lastName": "Talby",
+    "email": "ltalby9@examiner.com",
+    "password": "rCZ7/q$q3X6u/<",
+    "type": "Admin",
+    "image": "image1.jpg"
+  },
+  {
+    "id": 11,
+    "firstName": "Janina",
+    "lastName": "Mantrip",
+    "email": "jmantripa@hugedomains.com",
+    "password": "qGE2`)Sg",
+    "type": "Customer",
+    "image": "snapshot111.jpg"
+  },
+  {
+    "id": 12,
+    "firstName": "Gratiana",
+    "lastName": "Bleibaum",
+    "email": "gbleibaumb@google.ru",
+    "password": "tFQ7>KqKeo!SY'",
+    "type": "Admin",
+    "image": "pic567.jpg"
+  },
+  {
+    "id": 13,
+    "firstName": "Hildegaard",
+    "lastName": "Wontner",
+    "email": "hwontnerc@ftc.gov",
+    "password": "tVK2@P\"o\\KUo1|j",
+    "type": "Customer",
+    "image": "snapshot789.jpg"
+  },
+  {
+    "id": 14,
+    "firstName": "Celia",
+    "lastName": "Moan",
+    "email": "cmoand@com.com",
+    "password": "fMD6,%)~A_fO",
+    "type": "Customer",
+    "image": "file999.jpg"
+  },
+  {
+    "id": 15,
+    "firstName": "Brooks",
+    "lastName": "Canete",
+    "email": "bcanetee@purevolume.com",
+    "password": "aJK2$Ns#+%Wg",
+    "type": "Customer",
+    "image": "picture555.jpg"
+  },
+  {
+    "id": 16,
+    "firstName": "Byran",
+    "lastName": "Dungey",
+    "email": "bdungeyf@mail.ru",
+    "password": "pQW8|(N,",
+    "type": "Customer",
+    "image": "photo777.jpg"
+  },
+  {
+    "id": 17,
+    "firstName": "Amata",
+    "lastName": "Bidwell",
+    "email": "abidwellg@amazon.de",
+    "password": "wCW7)4d{a?G/F",
+    "type": "Customer",
+    "image": "image1.jpg"
+  },
+  {
+    "id": 18,
+    "firstName": "Genovera",
+    "lastName": "Eminson",
+    "email": "geminsonh@reuters.com",
+    "password": "kAZ2>uXwmDcE1",
+    "type": "Admin",
+    "image": "pic567.jpg"
+  },
+  {
+    "id": 19,
+    "firstName": "Damaris",
+    "lastName": "Crauford",
+    "email": "dcraufordi@businesswire.com",
+    "password": "qRP4}O\"zq'fX`#%`",
+    "type": "Customer",
+    "image": "photo123.jpg"
+  },
+  {
+    "id": 20,
+    "firstName": "Faulkner",
+    "lastName": "Sarney",
+    "email": "fsarneyj@canalblog.com",
+    "password": "fEA7%0(c1e0WMkBA",
+    "type": "Admin",
+    "image": "snapshot789.jpg"
+  },
+  {
+    "id": "dad66913-1d1e-4389-93e3-9cea71722a21",
+    "nombre": "Ezio Javier",
+    "apellido": "Barrera",
+    "dni": "23434253",
+    "telefono": "12345678",
+    "domicilio": "La Rioja",
+    "country": "Argentina",
+    "nombreUsuario": "EzioJavi",
+    "email": "eziojavi@gmail.com",
+    "password": "ezio12345",
+    "admincomp": "comprador",
+    "tipoUsuario": "hombre",
+    "foto": "user-be7518decdbefb6d.jpg"
+  },
+  {
+    "id": "b26af2e5-4c6b-4cbb-a2c9-0ae76c6dd1fd",
+    "nombre": " Lucas",
+    "apellido": "Barrera",
+    "dni": "23434253",
+    "telefono": "345345345345",
+    "domicilio": "La Rioja",
+    "country": "Argentina",
+    "nombreUsuario": "LucasBM",
+    "email": "barreramenemlucas@gmail.com",
+    "password": "$2a$10$Xm5tF1xcoHHuSNK3FanVFuRF/gGw75J6VO9p4B3QdVOumhQ3nHAwO",
+    "admincomp": "admin",
+    "tipoUsuario": "hombre",
+    "foto": "user-45745ab432bdb4f7.jpg"
+  }
+]

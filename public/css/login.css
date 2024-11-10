@@ -1,0 +1,239 @@
+/* color de titulos #4cc6ca  
+color boton cancelar #a4a8ab */
+*{
+  font-family: 'roboto';
+}
+body {
+  background-color: #EEFCFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/*seccion de estilos del header */
+.header {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #01131f;
+  padding: 15px;
+}
+.hamburger {
+  width: 40px;
+  height: 40px;
+  background-color: #00b4ba;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 60px;
+  margin: 0 auto;
+}
+/*.iconos {
+  height: 30px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    margin: 0 5px;
+    font-size: 20px;
+    color: #00b4ba;
+  }
+}*/
+
+/* seccion de estilos de login  */
+.h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+.login {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  input {
+    padding: 5px;
+    border: solid 1px #4cc6ca;
+    margin: 10px 0px 10px 0px;
+    border-radius: 5px;
+    height: 25px;
+    width: 60%;
+
+  }
+  .cuadros-login {
+    margin: 1% 2% 1% 0;
+    text-align: start;
+    padding-left: 10px;
+    width: 40%;
+    border-radius: 5px;
+    height: 35px;
+    border: 1px solid #00B5B9;
+
+  }
+  .cuadros-login {
+    margin: 1% 2% 1% 0;
+    text-align: start;
+    padding-left: 10px;
+    width: 40%;
+    border-radius: 5px;
+    height: 35px;
+    border: 1px solid #00B5B9;
+  }
+  .remember {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    input {
+      margin: 0;
+      width: 5%;
+    }
+  }
+  .style-div-botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin: 2%;
+  }
+  .boton-aceptar {
+      color :#ebebeb; 
+      background-color: #2968c8; 
+      border-radius: 5px; 
+      margin: 2% 5% 2% 5%;
+      border: none;
+      font-weight: bold;
+      width: 50%;
+      height: 35px;
+      cursor: pointer;
+      transition: background-color 500ms;
+      text-decoration: none;
+  }
+  .boton-aceptar i{
+    font-weight: 400;
+    margin-right: 15px;
+  }
+  .boton-aceptar:hover{
+      background-color: #0022AA;
+  }
+  .boton-cancelar {
+      color :#ebebeb; 
+
+      background-color: #f52536; 
+
+      border-radius: 5px; 
+      border: none;
+      font-weight: bold;
+      width: 50%;
+      height: 35px;
+      cursor: pointer;
+      transition: background-color 500ms;
+  }
+  .boton-cancelar:hover {
+
+      background-color: #9c042a;
+
+  }
+  .boton-link {
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #ebebeb;
+    background-color: #2968c8;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 2px 5px 2px 5px;
+    border: none;
+    font-weight: bold;
+    width: 30%;
+    cursor: pointer;
+    transition: background-color 500ms;
+  } 
+  .boton-link:hover {
+      background-color: #0022AA;
+  }
+}
+.button-index {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  color: #000000;
+  border-radius: 50%;
+  background-color: #4878D9;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+.button-index.show {
+  display: block;
+}
+.button-index i {
+  font-size: x-large;
+  color: #000000;
+}
+/* seccion de estilos de footer 
+footer {
+  background-color: #61bcd3;
+  border-top: 1px solid #18798b;
+}
+.footer-div-menus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.singular-menu {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+}
+.footer-h3 {
+  width: 100%;
+  padding: 8px;
+  box-sizing: content-box;
+  cursor: pointer;
+  margin: 5px;
+}
+.footer-h3:hover {
+  background-color: #13949c;
+}
+.sub-menus-footer {
+  display: none;
+  background-color: #61bcd3;
+  padding: 10px;
+}
+.sub-menus-footer a {
+  color: black;
+  padding: 8px 0;
+  text-decoration: none;
+  display: block;
+}
+.sub-menus-footer a:hover {
+  background-color: #13949c;
+}
+footer img {
+  height: 50px;
+}
+.footer-div-copyright {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  background-color: #13949c;
+  border-top: 1px solid #18798b;
+}
+.footer-p-copyright {
+  font-size: 10px;
+  text-align: justify;
+}
+*/

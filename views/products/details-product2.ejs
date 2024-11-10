@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include ('../partials/head.ejs', {estilo:'detailsproduct2'})%>
+
+    <body>
+        <%-include ('../partials/header')%>
+            <%-include ('../partials/nav-bar')%>
+                <main>
+                    <%-include ('../partials/button-top')%>
+                        <!-- <div class="detail-product"> -->
+                        <div class="product-detail">
+                            <!-- <h2>Detalle del producto</h2> -->
+
+                            <div class="product-image">
+                                <img src="/images/products/<%= producto.imagen%>" alt="" width="250px">
+                            </div>
+
+
+                            <div class="product-info">
+                                <div class="navegador">
+                                    <a href="/">Inicio</a>
+                                    <% if ( tipoProducto) { %>
+                                      <p class="signo">></p>
+                                      <a href="/products/categorias?categoriaId=<%= tipoProducto.id %>">
+                                        <%= tipoProducto.categoria  %>
+                                      </a>
+                                    <% } %>
+                                  
+                                    <% if (subcategoria) { %>
+                                      <p class="signo">></p>
+                                      <a href="/products/categorias?categoriaId=<%= subcategoria.id %>">
+                                        <%= subcategoria.categoria %>
+                                      </a>
+                                    <% } %>
+                                  
+                                    <% if (categoria) { %>
+                                      <p class="signo">></p>
+                                 <p class="tipo"><%= categoria.categoria %></p>
+                                    <% } %>
+                                  </div>
+                                  
+                                <h2 class="brand">
+                                    <%= producto.marca.descripcion %>
+                                </h2>
+                                <h1 class="product-name">
+                                    <%= producto.nombre %>
+                                </h1>
+                               
+                                <p class="price">
+                                    <% if (producto.oferta) { %>
+                                        <p class="normal">$ <%= producto.precio %></p>
+                                        <p class="precio-final"> $ <%= (producto.precio * (1 - producto.descuento / 100)).toFixed(2) %> <span class="descuento"> <%= producto.descuento %>%  OFF <span></span></p>
+                                    <% } else { %>
+                                        <p>$ <%= producto.precio %></p>
+                                    <% } %>
+                            </p>
+                                <p class="color">Color: 
+                                <%= producto.color %>
+                            </p>
+                                    <!-- <h4>Descripción:</h4> -->
+                                 <p class="description"> Descripción: <%= producto.descripcion %>
+                                 </p>
+
+                                         <% if (usuario.tipo_usuario=='admin') { %>
+                                            <div class="button-container">
+                                                <!-- <div class="style-div-botones"> -->
+                                                    <a href="/products/editproduct/<%= producto.id %>">
+                                                        <button class="boton-editar">
+                                                            Editar
+                                                        </button>
+                                                    </a>
+                                                    <a href="/products/showDelete/<%= producto.id %>">
+                                                        <button class="boton-eliminar">
+                                                            Eliminar
+                                                        </button>
+                                                    </a>
+                                                    
+                                                    <a href="/products">
+                                                        <button class="boton-cancelar" type="button">
+                                                            Cancelar
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                                <%} else {%>
+                                                    <div class="button-container">
+                                                        <button class="buy-button">Comprar</button>
+                                                        <button class="favorite-button">Agregar a favoritos</button>
+                                                      </div>
+                                                      <% } %>
+
+
+                            </div>
+                        </div>
+                </main>
+                <%-include ('../partials/footer')%>
+                    <% if (successMessage && successMessage.length> 0) { %>
+                        <script>
+                            Swal.fire({
+                                title: 'Producto editado',
+                                text: '<%= successMessage %>',
+                                icon: 'success',
+                                confirmButtonText: 'Aceptar'
+                            });
+                        </script>
+
+                        <% } %>
+    </body>
+
+</html>

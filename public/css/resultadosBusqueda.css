@@ -1,0 +1,66 @@
+*{
+    font-family: 'roboto';
+}
+body {
+    margin: 0;
+    background-color: #EEFCFF;
+    width: 100%;
+}
+.div-body {
+    width: 100%;
+    text-align: center;
+    padding: 2%;
+}
+.products-title {
+    font-size: xx-large;
+    margin-bottom: 20px;
+}
+.todos-los-productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    section {
+        width: 50%;
+    }
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        width: 100%;
+        background-color: white;
+        border: solid 2px #585858;
+        border-radius: 15px;
+        text-decoration: none;
+        color: black;
+        img {
+            background-color:  white;
+            height: 170px;
+            padding: 10px 0;
+        }
+        article {
+            text-decoration: none;
+        }
+    }
+}
+.button-index {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+    border-radius: 50%;
+    background-color: #4878D9;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+.button-index.show {
+    display: block;
+}
+.button-index i {
+    font-size: x-large;
+    color: #000000;
+}

@@ -1,0 +1,38 @@
+<nav class="menu-categorias">
+  <ul class="menu-izquierdo">
+     <li>
+      <a href="/products">Todos los productos</a>
+    </li>
+   
+    <% categorias.filter(cat => !cat.parent_id).forEach(categoria => { %>
+      <li>
+          <a href="/products/categorias?categoriaId=<%= categoria.id %>"><%= categoria.categoria %></a>
+          <ul >
+              <% categorias.filter(subcat => subcat.parent_id === categoria.id).forEach(subcategoria => { %>
+                  <li>
+                      <a href="/products/categorias?categoriaId=<%= subcategoria.id %>"><%= subcategoria.categoria %></a>
+                      <ul >
+                          <% categorias.filter(tipo => tipo.parent_id === subcategoria.id).forEach(tipo => { %>
+                              <li>
+                                  <a href="/products/categorias?categoriaId=<%= tipo.id %>"><%= tipo.categoria %></a>
+                              </li>
+                          <% }) %>
+                      </ul>
+                  </li>
+              <% }) %>
+          </ul>
+      </li>
+  <% }) %>
+  </ul>
+  <ul class="menu-derecho">
+    <li>
+      <a href="#">Administración</a>
+      <ul class="submenu">
+        <li><a href="/products/addproduct">Agregar Producto</a></li>
+        <li><a href="/products">Editar Producto</a></li>
+      </ul>
+    </li>
+    <li><a href="/products/ofertas">Ofertas</a></li>
+    <!-- <li><a href="#">Promociones</a></li> -->
+  </ul>
+</nav>

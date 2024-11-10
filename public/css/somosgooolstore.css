@@ -1,0 +1,109 @@
+paleta {
+    color: #4970E3 rgb (73, 112, 227);
+    color: #E0F5F6 rgb (224, 245, 246);
+    color: #E5E5E5 rgb (229, 229, 229);
+    color: #00B5B9 rgb (0, 181, 185);
+    color: #004557 rgb (0, 69, 87);
+    color: #00131F rgb (0, 19, 31);
+}
+
+/*------------------- HTML -----------------*/
+* {
+    font-family: 'roboto';
+}
+
+/*------------------- BODY -----------------*/
+body {
+    background-color: #EEFCFF;
+    margin: 0;
+    width: 100%;
+}
+h1{
+    margin: 20px;
+    text-align: center;
+}
+h2{
+    margin: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    img{
+        width: 20%;
+        animation: giroY 4s linear 1;
+        transform-style: preserve-3d;
+    }
+}
+@keyframes giroY {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+.p-text{
+    font-weight: bold;
+    width: 50%;
+    text-align: justify;
+    margin-left: 10%;
+    line-height: 1.5;
+}
+.p-public{
+    text-align: justify;
+    margin: 5px 100px 30px;
+}
+h3{
+    text-decoration: underline;
+}
+.oculto {
+    display: none;
+}
+.li-user {
+    cursor: pointer;
+    color: #4878D9; 
+    text-decoration: underline;
+    margin-left: 40%;
+    line-height: 1.5;
+}
+.p-user{
+    margin: 5px 70px 30px;
+    font-style: oblique;
+    text-align: justify;
+}
+h4{
+    text-align: center;
+    line-height: 1.5;
+    text-decoration: underline;
+}
+.li{
+    margin: 2px 200px;
+}
+
+/*------------------- BOTON INDEX -----------------*/
+.button-index {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+    border-radius: 50%;
+    background-color: #4878D9;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.button-index.show {
+    display: block;
+}
+
+.button-index i {
+    font-size: x-large;
+    color: #000000;
+}

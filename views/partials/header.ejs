@@ -1,0 +1,64 @@
+<header>
+    <div class="menu-container">
+        <i class="fa-solid fa-bars left-menu"></i>
+    </div>
+    <div class="logo-container">
+        <a href="/">
+            <img class="logo" src="/images/logo_sin_fondo.svg" alt="">
+        </a>
+    </div>
+    <div class="logo-container-desktop">
+        <a href="/">
+            <img class="logo-desktop" src="/images/logo_sin_fondo.svg" alt="">
+        </a>
+    </div>
+    <div class="search-container">
+        <form class="search-bar-desktop" action="/products/search" method="GET">
+            <input type="text" name="query" placeholder="Buscar productos, marcas, etc...">
+            <button type="submit" class="button-search" id="button-search">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+    <div class="icons-container">
+        <a href="/users/login">
+            <i class="fa-solid fa-user"></i>
+        </a>
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <nav class="menu-desktop">
+        
+        <% if (!user) { %> 
+        <a href="/users/login">Ingresar
+            <i class="fa-solid fa-right-to-bracket"></i>
+        </a>
+        <a href="/users/register">Registrarse
+            <i class="fa-solid fa-user-plus"></i>
+        </a>
+        <% } else { %>
+            <a class="perfil-cuenta" href="/users/perfil" title="Ir a mi perfil">
+                <%= user.nombre_usuario %>
+                <img class="foto-perfil-header" src="/images/users/<%= user.foto_perfil %>" alt="Foto de perfil">
+                <!-- <span class="tooltip-text">Ir a mi perfil</span> -->
+                <!-- <i class="fa-solid fa-user"></i> -->
+            </a>
+            
+            <div class="user-profile" title="Ir a mi perfil">
+                <!-- <img src="ruta/de/foto-perfil.jpg" alt="Foto de perfil" class="profile-icon"> -->
+                <!-- <span>NombreUsuario</span> -->
+            </div>
+            
+            <a href="#">Favoritos
+                <i class="fa-solid fa-heart"></i>
+            </a>
+            <a href="/products/shop-cart">Carrito
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <a href="/users/logout">Cerrar sesión
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <!-- <i class="fa-solid fa-user-large-slash"></i> -->
+            </a>
+            <% }%>
+    </nav>
+</header>

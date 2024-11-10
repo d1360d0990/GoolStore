@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include ('../partials/head.ejs', {estilo:'login'})%>
+
+  <body>
+    <%-include ('../partials/header.ejs')%>
+      <%-include ('../partials/button-top.ejs')%>
+        <% if (typeof errors !='undefined' ) { %>
+          <p>Error</p>
+          <ul>
+            <% for( let i=0; i < errors.length; i++ ) { %>
+              <li>
+                <%=errors[i].msg%>
+              </li>
+              <% } %>
+          </ul>
+          <% } %>
+            <h1 class="h1">LOGUEARSE</h1>
+            <form class="login" action="/users/login" method="post">
+              <input class="cuadros-login" required minlength="3" maxlength="30" type="email" id="nombreUsuarioLogin"
+                name="email" placeholder="* Ingrese su email" />
+              <input class="cuadros-login" type="password" id="passwordLogin" name="password" placeholder="* Contraseña"
+                required /><br>
+              <div class="remember">
+                <input type="checkbox" name="remember" id="" value="remember" />
+                <label for="remember">Recordarme</label>
+              </div>
+              <div class="style-div-botones">
+                <button class="boton-aceptar" type="submit">Aceptar</button>
+                <button class="boton-cancelar" type="reset">Cancelar</button>
+                <button class="boton-aceptar"><i class="fa-brands fa-google"></i>Ingresa con Google</button>
+              </div>
+              <h3>¿No tenés cuenta?</h3><br>
+              <a href="register" class="boton-link">Registrate</a>
+            </form>
+            <%-include ('../partials/footer.ejs')%>
+            <script src="/js/login.js"></script>
+            <% if (successMessage && successMessage.length > 0) { %>
+              <script>
+                  Swal.fire({
+                      title: 'Usuario creado con éxito',
+                      text: '<%= successMessage %>',
+                      icon: 'success',
+                      confirmButtonText: 'Aceptar'
+                  });
+                  </script>
+              
+              <% } %>
+              <% if (errorMessage && errorMessage.length> 0) { %>
+                <script>
+                    Swal.fire({
+                        title: 'Error',
+                        text: '<%= errorMessage %>',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                </script>
+
+                <% } %>
+  </body>
+
+</html>

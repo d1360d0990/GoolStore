@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs', {estilo:'register'})%>
+
+    <body>
+        <%-include ('../partials/header.ejs')%>
+            <%-include ('../partials/button-top.ejs')%>
+                <main class="container">
+                    <h1 class="h1">REGISTRO DE USUARIO</h1>
+                    <form class="form" action="/users/register" method="POST" enctype="multipart/form-data" id="formulario">
+                        <h3 class="h3">Datos Personales</h3>
+                        <div>
+                            <div class="div-par">
+                                <input class="cuadros-login <%= mapsDeError.nombre ? 'error-border' : '' %>" type="text"
+                                    id="nombre" name="nombre" placeholder="* Nombre" value="<%= locals.old && old.nombre? old.nombre : "" %>">
+                                    <br>
+                                <input class="cuadros-login <%= mapsDeError.apellido ? 'error-border' : '' %>"
+                                    type="text" id="apellido" name="apellido" placeholder="* Apellido" value="<%= locals.old && old.apellido? old.apellido : "" %>" >
+                                    <br>
+                            </div>
+
+                            <div class="error-container">
+                                <% if (mapsDeError.nombre) { %>
+                                    <p class="errorValidator izquierda">
+                                        <%= mapsDeError.nombre.msg %>
+                                    </p>
+                                    <% } else { %>
+                                        <p class="errorValidator izquierda">&nbsp;</p>
+                                    <% } %>
+
+
+                                        <% if (mapsDeError.apellido) { %>
+                                            <p class="errorValidator derecha">
+                                                <%= mapsDeError.apellido.msg %>
+                                            </p>
+                                            <% } else { %>
+                                                <p class="errorValidator derecha">&nbsp;</p>
+                                            <% } %>
+                            </div>
+
+                            <div class="div-par">
+                                <input class="cuadros-login <%= mapsDeError.dni ? 'error-border' : '' %>" type="text"
+                                    id="dni" name="dni" placeholder="* DNI"
+                                    maxlength="8" value="<%= locals.old && old.dni? old.dni : "" %>" >
+                                    <br>
+                                <input class="cuadros-login <%= mapsDeError.telefono ? 'error-border' : '' %>"
+                                    type="tel" id="telefono" name="telefono" placeholder="* Teléfono" value="<%= locals.old && old.telefono? old.telefono : "" %>">
+                                    <br><br>
+                            </div>
+                            <div class="error-container">
+                                <% if (mapsDeError.dni) { %>
+                                    <p class="errorValidator izquierda">
+                                        <%= mapsDeError.dni.msg %>
+                                    </p>
+                                    <% } else { %>
+                                        <p class="errorValidator izquierda">&nbsp;</p>
+                                    <% } %>
+                                        <% if (mapsDeError.telefono) { %>
+                                            <p class="errorValidator derecha">
+                                                <%= mapsDeError.telefono.msg %>
+                                            </p>
+                                            <% } else { %>
+                                                <p class="errorValidator derecha">&nbsp;</p>
+                                            <% } %>
+                            </div>
+                            <div class="div-par">
+                                <input class="cuadros-login <%= mapsDeError.domicilio ? 'error-border' : '' %>"
+                                    type="text" id="domicilio" name="domicilio" placeholder="* Domicilio" value="<%= locals.old && old.domicilio? old.domicilio : "" %>">
+                                    
+                                <label for="countries"></label>
+                                <input class="cuadros-login <%= mapsDeError.country ? 'error-border' : '' %>"
+                                    list="countries" id="country" name="country" placeholder="* País" value="<%= locals.old && old.country? old.country : "" %>">
+                                <datalist id="countries">
+                                    <% countries.forEach(function(country) { %>
+                                        <option value="<%= country %>"></option>
+                                        <% }); %>
+                                </datalist>
+                                <br>
+                            </div>
+                            <div class="error-container">
+                                <% if (mapsDeError.domicilio) { %>
+                                    <p class="errorValidator izquierda">
+                                        <%= mapsDeError.domicilio.msg %>
+                                    </p>
+                                    <% } else { %>
+                                        <p class="errorValidator izquierda">&nbsp;</p>
+                                    <% } %>
+                                        <% if (mapsDeError.country) { %>
+                                            <p class="errorValidator derecha">
+                                                <%= mapsDeError.country.msg %>
+                                            </p>
+                                            <% } else { %>
+                                                <p class="errorValidator derecha">&nbsp;</p>
+                                            <% } %>
+                            </div>
+
+                        </div>
+                        <h3 class="h3">Perfil de usuario</h3>
+                        <div>
+                            <div class="div-par">
+                                <input class="cuadros-login <%= mapsDeError.nombreUsuario ? 'error-border' : '' %>"
+                                    type="text" id="nombreUsuario" name="nombreUsuario"
+                                    placeholder="* Nombre de Usuario" value="<%= locals.old && old.nombreUsuario? old.nombreUsuario : "" %>">
+                                <br>
+                            </div>
+                            <div class="error-container">
+                                <% if (mapsDeError.nombreUsuario) { %>
+                                    <p class="errorValidator">
+                                        <%= mapsDeError.nombreUsuario.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="div-par">
+                                <input class="cuadros-login <%= mapsDeError.email ? 'error-border' : '' %>" type="email"
+                                    id="email" name="email" placeholder="* Email" value="<%= locals.old && old.email? old.email : "" %>"><br>
+                                <input class="cuadros-login <%= mapsDeError.emailVerify ? 'error-border' : '' %>"
+                                    type="email" id="emailVerify" name="emailVerify"
+                                    placeholder="* Confirmar Email" value="<%= locals.old && old.emailVerify? old.emailVerify : "" %>"><br>
+                            </div>
+                            <div class="error-container">
+                                <% if (mapsDeError.email) { %>
+                                    <p class="errorValidator izquierda">
+                                        <%= mapsDeError.email.msg %>
+                                    </p>
+                                    <% } else { %>
+                                        <p class="errorValidator izquierda">&nbsp;</p>
+                                    <% } %>
+                                        <% if (mapsDeError.emailVerify) { %>
+                                            <p class="errorValidator derecha">
+                                                <%= mapsDeError.emailVerify.msg %>
+                                            </p>
+                                            <% } else { %>
+                                                <p class="errorValidator derecha">&nbsp;</p>
+                                            <% } %>
+                            </div>
+                            <div class="div-par">
+                                <input class="cuadros-login <%= mapsDeError.password ? 'error-border' : '' %>"
+                                    type="password" id="password" name="password" placeholder="* Contraseña"><br>
+                                <input class="cuadros-login <%= mapsDeError.passwordVerify ? 'error-border' : '' %>"
+                                    type="password" id="passwordVerify" name="passwordVerify"
+                                    placeholder="* Confirmar contraseña"><br>
+                            </div>
+                        </div>
+                        <div class="error-container">
+                            <% if (mapsDeError.password) { %>
+                                <p class="errorValidator izquierda">
+                                    <%= mapsDeError.password.msg %>
+                                </p>
+                                <% } else { %>
+                                    <p class="errorValidator izquierda">&nbsp;</p>
+                                <% } %>
+                                    <% if (mapsDeError.passwordVerify) { %>
+                                        <p class="errorValidator derecha">
+                                            <%= mapsDeError.passwordVerify.msg %>
+                                        </p>
+                                        <% } else { %>
+                                            <p class="errorValidator derecha">&nbsp;</p>
+                                        <% } %>
+                        </div>
+                        <h3 class="h3">Admin-Comprador</h3>
+                        <div class="style-label">
+                            <label class="style-label-r">
+                                <input class="radio-checkbox" type="radio" name="admincomp" value="admin" id="admin">Administrador
+                            </label>
+                            <label class="style-label-r">
+                                <input class="radio-checkbox" type="radio" name="admincomp" value="comprador" id="comp">Comprador
+                            </label>
+                        </div>
+                        <div class="error-container">
+                            <p class="errorValidator izquierda" id="error-message">
+                            <% if (mapsDeError.admincomp) { %>
+                                <p class="errorValidator izquierda" id="error-message">
+                                    <%= mapsDeError.admincomp.msg %>
+                                </p>
+                                <% } else { %>
+                                    <p class="errorValidator izquierda">&nbsp;</p>
+                                <% } %>
+                        </div>
+                        <h3 class="h3">Sexo</h3>
+                        <div class="style-label">
+                            <label class="style-label-r">
+                                <input class="radio-checkbox" type="radio" name="tipoUsuario" value="hombre">Hombre
+                            </label>
+                            <label class="style-label-r">
+                                <input class="radio-checkbox" type="radio" name="tipoUsuario" value="mujer">Mujer
+                            </label>
+                            <label class="style-label-r">
+                                <input class="radio-checkbox" type="radio" name="tipoUsuario" value="no-binario">No
+                                Binario
+                            </label>
+                        </div>
+                        <h3 class="h3">Vamos a conocerte mejor</h3>
+                        <h4>¿Que marca deportiva son de tu interes?</h4>
+                        <br>
+                        <div class="style-label-user">
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/adidas.png" alt="Adidas">
+                            </label>
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/converse.png" alt="Converse">
+                            </label>
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/fila.png" alt="Fila">
+                            </label>
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/lotto.png" alt="Lotto">
+                            </label>
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/nike.png" alt="Nike">
+                            </label>
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/puma.png" alt="Puma">
+                            </label>
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/reebok.png" alt="Reebok">
+                            </label>
+                            <label class="style-label-cb">
+                                <input class="radio-checkbox" type="checkbox" name="intereses">
+                                <img src="../images/marcas/topper.png" alt="Topper">
+                            </label>
+                        </div><br>
+                        <h4 class="h4-2">¿Tallas?</h4>
+                        <div class="style-label-user">
+                            <div>
+                                <h4 class="h4">Remera</h4>
+                                <label class="style-label-talla">
+                                    <select class="select-talla" id="tallaRemera" name="tallaRemera">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                        <option value="XXXL">XXXL</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <h4 class="h4">Pantalon</h4>
+                                <label class="style-label-talla">
+                                    <select class="select-talla" id="tallaPantalon" name="tallaPantalon">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                        <option value="XXXL">XXXL</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <h4 class="h4">Short</h4>
+                                <label class="style-label-talla">
+                                    <select class="select-talla" id="tallaShort" name="tallaShort">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                        <option value="XXXL">XXXL</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <h4 class="h4">Campera</h4>
+                                <label class="style-label-talla">
+                                    <select class="select-talla" id="tallaCampera" name="tallaCampera">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                        <option value="XXXL">XXXL</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <h4 class="h4">Zapatilla</h4>
+                                <label class="style-label-talla">
+                                    <select class="select-talla" id="tallaZapatillas" name="tallaZapatillas">
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                        <option value="32">32</option>
+                                        <option value="33">33</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="46">46</option>
+                                        <option value="47">47</option>
+                                        <option value="48">48</option>
+                                        <option value="49">49</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div><br>
+                        <div>
+                            <label for="foto">Escoge una foto para tu perfil</label><br><br>
+                            <input type="file" name="foto" id="fileUpload">
+                        </div>
+                        <div class="style-label-acept">
+                            <input class="checkbox-accept" type="checkbox" id="privacy-policy"
+                                data-missing-error="Para continuar deberás aceptar las Políticas de Privacidad y los Términos y Condiciones."
+                                name="customer_privacyPolicy" required aria-required="true" value="true">
+                            <label for="privacy-policy">Acepto las
+                                <a href="#">Políticas de Privacidad</a> y
+                                <a href="#">Términos y Condiciones</a>.
+                            </label>
+                        </div>
+                        <div class="style-div-botones">
+                            <button class="boton-aceptar" type="submit">Aceptar</button>
+                            <button class="boton-cancelar" type="reset" onclick="location.href='/';">Cancelar</button><br>
+                        </div>
+                    </form>
+                </main>
+                <%-include ('../partials/footer.ejs')%>
+                <script src="/js/register.js"></script>
+                <% if (errorMessage && errorMessage.length> 0) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Error',
+                            text: '<%= errorMessage %>',
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    </script>
+
+                    <% } %>
+
+    </body>
+
+</html>

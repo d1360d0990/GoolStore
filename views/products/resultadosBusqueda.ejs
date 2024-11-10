@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('../partials/head', {estilo: 'resultadosBusqueda' }) %>
+
+  <body>
+    <!-- Header -->
+    <%- include('../partials/header') %>
+      <!-- /nav-bar -->
+      <%- include('../partials/nav-bar') %>
+        <%-include ('../partials/button-top')%>
+          <!-- todos los productos -->
+          <div class="div-body">
+           
+            <div class="todos-los-productos">
+              <section>
+                <% if (productos.length > 0) { %> 
+                    <div>
+                        <h2 class="products-title">Resultados para la búsqueda de: <%= query %></h2>
+                      </div>
+                <% productos.forEach(product=>{%>
+                  <a href="/products/detail/<%= product.id %>">
+                    <figure class="">
+                      <img src="/images/products/<%= product.imagen  %>" alt="imagen de producto" />
+                    </figure>
+                    <article class="">
+                      <h2>
+                        <%= product.nombre %>
+                      </h2><br>
+                      <h3>$ <%= product.precio %>
+                      </h3><br>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </a>
+                  <%})%>
+                  <% } else { %>
+                    <p>No se encontraron resultados para "<%= query %>".</p>
+                  <% } %>
+              </section><br>
+            </div>
+          </div>
+          <%- include('../partials/footer') %>
+  </body>
+
+</html>

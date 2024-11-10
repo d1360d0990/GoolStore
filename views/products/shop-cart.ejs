@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include ('../partials/head.ejs', {estilo:'shop-cart'})%>
+
+    <body>
+        <%-include ('../partials/header.ejs')%>
+            <%-include ('../partials/nav-bar.ejs')%>
+                <main>
+                    <%-include ('../partials/button-top.ejs')%>
+                        <h2 class="titulo">Resumen de tu compra</h2>
+                        <h3> carrito de compras de :
+                            <%= usuario.nombre%>
+                                <%=usuario.apellido %>
+                        </h3>
+                        <section class="container">
+                            <article class="product-purchase">
+                                <img class="image" src="/images/botin.JPG" alt="">
+                                <div class="description">
+                                    <h4>Botines Fútbol adidas X Crazyfast.3 Ll Fg</h4>
+                                    <p>Talle: </p>
+                                    <p>Cantidad:
+                                        <button class="decrease">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="increase">+</button>
+                                    </p>
+                                    <p>Precio: </p>
+
+                                </div>
+                                <div class="delete">
+                                    <button>Eliminar</button>
+                                </div>
+                            </article>
+                            <article class="product-purchase">
+                                <img class="image" src="/images/botin-nike.JPG" alt="">
+                                <div class="description">
+                                    <h4>Botines Fútbol Nike Mercurial Vapor 15 Academy Fg</h4>
+                                    <p>Talle: </p>
+                                    <p>Cantidad:
+                                        <button class="decrease">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="increase">+</button>
+                                    </p>
+                                    <p>Precio:</p>
+                                </div>
+                                <div class="delete">
+                                    <button>Eliminar</button>
+                                </div>
+                            </article>
+                        </section>
+                        <section class="detalle-compra">
+                            <h2>Subtotal:</h2>
+                            <h3>Costo de envio:</h3>
+                            <h3>Descuentos:</h3>
+                            <h2>Total:</h2>
+                            <button class="buy-button">Confirmar compra</button>
+                            <button class="cancel-button">Cancelar compra</button>
+                        </section>
+                </main>
+
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const increaseButtons = document.querySelectorAll(".increase");
+                        const decreaseButtons = document.querySelectorAll(".decrease");
+
+                        increaseButtons.forEach(button => {
+                            button.addEventListener("click", (event) => {
+                                const quantitySpan = event.target.previousElementSibling;
+                                let currentQuantity = parseInt(quantitySpan.textContent, 10);
+                                quantitySpan.textContent = currentQuantity + 1;
+                            });
+                        });
+
+                        decreaseButtons.forEach(button => {
+                            button.addEventListener("click", (event) => {
+                                const quantitySpan = event.target.nextElementSibling;
+                                let currentQuantity = parseInt(quantitySpan.textContent, 10);
+                                if (currentQuantity > 1) {
+                                    quantitySpan.textContent = currentQuantity - 1;
+                                }
+                            });
+                        });
+                    });
+
+                </script>
+                <%-include ('../partials/footer.ejs')%>
+    </body>
+
+</html>

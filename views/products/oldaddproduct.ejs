@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ('../partials/head.ejs', {estilo:'addproduct'})%>
+
+    <body>
+        <%-include ('../partials/header.ejs')%>
+            <%-include ('../partials/nav-bar.ejs')%>
+                <main>
+                    <%-include ('../partials/button-top.ejs')%>
+                        <section class="cargaproducto">
+                            <h2>Carga de productos</h2>
+                            <form action="/products" method="post" enctype="multipart/form-data" class="formulario" id="formulario">
+                                <label for="nombre">Nombre del producto</label>
+                                <input type="text" name="nombre" id="producto" placeholder="* Nombre del producto" />
+                                <div class="error-container">
+                                    <% if (mapsDeError.nombre) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.nombre.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <label for="descripcion">Descripción del producto</label>
+                                <textarea type="text" name="descripcion" id="descripcion"
+                                    placeholder="* Descripcion del producto"></textarea>
+                                    <span id="charCounter">Faltan 20 caracteres para el mínimo requerido (20).</span>
+                                    <div class="error-container">
+                                        <% if (mapsDeError.descripcion) { %>
+                                            <p class="errorValidator">
+                                                <%= mapsDeError.descripcion.msg %>
+                                            </p>
+                                            <% }%>
+                                    </div>
+                                <div class="imagen">
+                                    <label for="imagen">Imagen del producto</label>
+                                    <input type="file" name="imagen" id="imagen" />
+                                    <div>
+                                        <label for="color">Color del producto</label>
+                                        <input type="text" name="color" id="color" />
+                                    </div>
+                                    <div class="error-container">
+                                        <% if (mapsDeError.color) { %>
+                                            <p class="errorValidator">
+                                                <%= mapsDeError.color.msg %>
+                                            </p>
+                                            <% }%>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="precio">Precio del producto</label>
+                                    <input type="text" name="precio" id="precio" />
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.precio) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.precio.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <div>
+                                    <label for="talle">Seleccione un talle:</label>
+                                    <select name="talle" id="talle">
+                                      <option value="" disabled selected>Seleccione un talle</option>
+                                      <% talles.forEach(talle => { %>
+                                        <option value="<%= talle.id %>"><%= talle.descripcion %></option>
+                                      <% }) %>
+                                    </select>
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.talle) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.talle.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <div>
+                                    <label for="marca">Marca del producto:</label>
+                                    <select id="marca" name="marca">
+                                        <option value="" disabled selected>Seleccion una marca</option>
+                                        <% marcas.forEach(marca => { %>
+                                            <option value="<%= marca.id %>"><%= marca.descripcion %></option>
+                                        <% }) %>
+
+                                          
+                                    </select>
+                                </div>
+                                <div class="error-container">
+                                    <% if (mapsDeError.marca) { %>
+                                        <p class="errorValidator">
+                                            <%= mapsDeError.marca.msg %>
+                                        </p>
+                                        <% }%>
+                                </div>
+                                <div class="botones">
+                                    <input class="boton-confirmar" type="submit" name="enviar" id="enviar"
+                                        value="Confirmar" />
+                                    <button type="reset" class="boton-reset">Borrar</button>
+                                </div>
+                            </form>
+                        </section>
+                </main>
+                <!-- <script src="/js/product.js"></script> -->
+                
+                <%-include ('../partials/footer.ejs')%>
+                <% if (errorMessage && errorMessage.length > 0) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Error',
+                            text: '<%= errorMessage %>',
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                        </script>
+                    
+                    <% } %>
+                <% if (successMessage && successMessage.length > 0) { %>
+                    <script>
+                        Swal.fire({
+                            title: 'Producto cargado',
+                            text: '<%= successMessage %>',
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                        });
+                        </script>
+                    
+                    <% } %>
+                    <script src="/js/product.js"></script>
+    </body>
+
+</html>
